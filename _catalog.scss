@@ -1,0 +1,90 @@
+.top-catalog {
+    background-image: url("./img/catalog_top.jpg");
+    height: 400px;
+}
+
+.facade-catalog {
+    padding-top: 126px;
+}
+
+.catalog-catalog {
+    margin-top: 0px;
+}
+
+.options {
+    display: flex;
+    width: 100%;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+
+    &__breadcrumbs {
+        list-style-type: none;
+        display: flex;
+    }
+    
+    &__breadcrumbs li a,
+    &__breadcrumbs li {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 32px;
+        color: $content-color;
+    }
+    
+    &__breadcrumbs li a:active {
+        font-weight: bold;
+    }
+
+    &__breadcrumbs li a:hover {
+        text-decoration: underline;
+    }
+    
+    &__breadcrumbs li::after {
+        content: "/";
+        margin-left: 5px;
+        margin-right: 5px;
+        columns: inherit;
+    }
+    
+    &__breadcrumbs li:last-child::after {
+        content: "";
+    }
+    
+    &__select-sort {
+        padding: 0.62em 1em 0.62em 1em;
+    }
+
+    &__select-sort:hover {
+        cursor: pointer;
+    }
+    
+    &__select-wrapper {
+        box-sizing: border-box;
+        border: 1px solid #C4C4C4;
+        border-radius: 1.25em;
+        width: 288px;
+        display: grid;
+        grid-template-areas: "select";
+        align-items: center;
+    }
+    
+    &__select-wrapper::after {
+        content: "";
+        width: 1.25em;
+        height: 0.69em;
+        background-color: $content-color;
+        clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+        pointer-events: none;
+        justify-self: end;
+        margin-right: 1em;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    
+    &__select-wrapper::after,
+    &__select-sort {
+        grid-area: select;
+    }
+}
