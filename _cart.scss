@@ -33,6 +33,8 @@
         margin: 24px 0 0 0;
         padding: 0 0 32px 0;
         border-bottom: 0.5px solid #CACDD8;
+        grid-template-rows: auto;
+        @include hover-effect-disable;
     }
     
     &__item:last-child {
@@ -61,7 +63,7 @@
         height: auto;
     }
     
-    &__prices {
+    &__price {
         display: flex;
     }
     
@@ -109,14 +111,10 @@
         border-radius: 6px;
     }
     
-    &__item-qty::-webkit-inner-spin-button {
-        height: 29px;
-    }
-    
     &__cart-interact {
         display: flex;
         align-items: center;
-        gap: 32px;
+        gap: 8px;
     }
     
     &__cart-btn--empty,
@@ -124,7 +122,7 @@
         display: block;
         box-sizing: border-box;
         border: 1px solid $content-color;
-        border-radius: 1.25em;
+        border-radius: 50px;
         padding: 0.62em 0 0.62em 0;
         width: 200px;
         font-size: 14px;
@@ -132,15 +130,19 @@
         text-align: center;
         color: $content-color;
         cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    &__cart-btn--empty:hover,
+    &__cart-btn--continue:hover {
+        text-decoration: none;
+        color: $main-color;
+        background-color: $content-color;
     }
     
     &__cart-btn--empty:active,
     &__cart-btn--continue:active {
         font-weight: bold;
-    }
-    
-    &__cart-btn--continue:hover {
-        text-decoration: none;
     }
 }
 
@@ -192,12 +194,27 @@
         margin-left: 1ex;
         width: 145px;
     }
+
+    @keyframes btn-attention {
+        0% {
+            box-shadow: 0 0 0px rgba(80,80,80,0);
+        }
+        80% {
+            box-shadow: 0 0 50px rgba(80,80,80,0);
+        }
+        90% {
+            box-shadow: 0 0 50px rgba(80,80,80,0.5);
+        }
+        100% {
+            box-shadow: 0 0 0px rgba(80,80,80,0);
+        }
+    }
     
     &__submit {
         display: block;
         box-sizing: border-box;
         border: 1px solid $content-color;
-        border-radius: 1.25em;
+        border-radius: 20px;
         padding: 0.62em 0 0.62em 0;
         width: 290px;
         font-size: 16px;
@@ -205,6 +222,14 @@
         text-align: center;
         color: $content-color;
         cursor: pointer;
+        transition: all .2s;
+        animation: btn-attention 8s ease-out infinite both;
+    }
+
+    &__submit:hover {
+        background-color: $content-color;
+        color: $main-color;
+        animation: none;
     }
 
     &__submit:active {

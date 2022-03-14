@@ -1,4 +1,23 @@
-$content-width: 1200px;
+$content-desktop: 1200px;
+$content-tablet: 786px;
+$content-mobile: 343px;
 $main-color: #FFFFFF;
 $content-color: #000000;
 $secondary-color: #888888;
+
+
+@mixin hover-effect {
+    transition: all .2s ease-in-out;
+    &:hover {
+        transform: scale(1.01);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  @mixin hover-effect-disable {
+    transition: none;
+    &:hover {
+        transform: none;
+        box-shadow: none;
+    }
+  }
