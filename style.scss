@@ -12,7 +12,7 @@ a {
 }
 
 a:active {
-    font-weight: bold;
+    text-shadow: 0 0;
 }
 
 select,
@@ -464,8 +464,8 @@ a:hover {
         height: 46px;
         font-size: 14px;
         line-height: 18px;
-        color: $content-color;
         margin-bottom: 12px;
+        color: $content-color;
         transition: all 0.2s;
     }
     
@@ -473,18 +473,12 @@ a:hover {
         background-color: $content-color;
         border: 0;
         box-sizing: border-box;
-        border-radius: 20px;
-        width: 275px;
-        height: 46px;
-        font-size: 14px;
-        line-height: 18px;
         color: $main-color;
-        margin-bottom: 12px;
         cursor: pointer;
     }
 
     &__btn:active {
-        font-weight: bold;
+        text-shadow: 0 0;
     }
 }
 

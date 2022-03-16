@@ -1,3 +1,7 @@
+button:active {
+    text-shadow: 0 0;
+}
+
 .top-cart {
     background-image: url("./img/cart_top.jpg");
     height: 400px;
@@ -28,6 +32,7 @@
     &__item {
         display: grid;
         grid-template-columns: repeat(8, 1fr);
+        grid-template-columns: repeat(2, 70px) repeat(6, 1fr);
         grid-auto-rows: 173px;
         gap: 32px;
         margin: 24px 0 0 0;
@@ -90,11 +95,6 @@
         cursor: pointer;
     }
     
-    &__item-btn--favorite:active,
-    &__item-btn--delete:active {
-        font-weight: bold;
-    }
-    
     &__item-qty {
         grid-column-start: -2;
         grid-column-end: -1;
@@ -139,11 +139,6 @@
         color: $main-color;
         background-color: $content-color;
     }
-    
-    &__cart-btn--empty:active,
-    &__cart-btn--continue:active {
-        font-weight: bold;
-    }
 }
 
 .ordering {
@@ -166,12 +161,12 @@
         margin-bottom: 64px;
     }
     
-    &__form label input {
+    &__form input {
         border-bottom: 1px solid #CACDD8;
         margin-bottom: 40px;
     }
     
-    &__form label input:hover {
+    &__form input:hover {
         cursor: text;
     }
     
@@ -233,6 +228,6 @@
     }
 
     &__submit:active {
-        font-weight: bold;
+        text-shadow: 0 0;
     }
 }
